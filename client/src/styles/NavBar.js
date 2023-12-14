@@ -27,7 +27,7 @@ const Nav = styled.nav`
       margin: 0.5rem;
 
       &:hover {
-        color: #b2a59b;
+        color: #776b5d;
       }
     }
     .search {

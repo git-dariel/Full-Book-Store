@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <style.Wrapper>
       <style.Nav>
-        <p>Vintage Books</p>
+        <p>SinagTalata</p>
         <div>
           <a href="#">Home</a>
           <a href="#">About</a>

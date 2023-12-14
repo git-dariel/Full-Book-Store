@@ -11,10 +11,47 @@ const Section = styled.div`
   margin-top: 4rem;
   width: 70rem;
   height: 40rem;
-  background-color: white;
+  background-color: #d7c6b6;
   border-radius: 3rem;
   border: 4px solid black;
-  font-family: "Cormorant Garamond", serif;
+  position: relative;
+
+  .content {
+    font-size: 1.9rem;
+    font-style: italic;
+    position: absolute;
+    top: 7rem;
+    left: 7rem;
+    z-index: 2;
+  }
+
+  .title {
+    display: inline-flex;
+    margin-top: 1rem;
+    position: absolute;
+
+    p {
+      font-size: 4rem;
+      left: 5rem;
+      z-index: 1;
+      padding-right: 25rem;
+      margin-left: 7rem;
+
+      span {
+        color: #d7c6b6;
+      }
+    }
+
+    img {
+      width: 450px;
+      height: 420px;
+      border-radius: 50%;
+      margin-right: 7rem;
+      position: absolute;
+      left: 35rem;
+      top: 2rem;
+    }
+  }
 `;
 
 const styles = {

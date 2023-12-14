@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: #2d2926;
-  background-color: #d7c6b6;
+  /* background-color: #d7c6b6; */
+  background: url("assets/bg.png") center/cover no-repeat;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
