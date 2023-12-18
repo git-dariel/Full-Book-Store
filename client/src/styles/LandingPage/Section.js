@@ -48,7 +48,7 @@ const Section = styled.div`
       border-radius: 50%;
       margin-right: 7rem;
       position: absolute;
-      left: 35rem;
+      left: 34.5rem;
       top: 2rem;
     }
   }

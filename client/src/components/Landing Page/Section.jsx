@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../../styles/LandingPage";
+import style from "../../styles/LandingPage/Section";
 import NavBar from "./NavBar";
 import img from "../../assets/img.jpg";
 

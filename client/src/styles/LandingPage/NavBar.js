@@ -10,9 +10,19 @@ const Nav = styled.nav`
   align-items: center;
   padding: 0rem 7rem;
 
+  .links {
+    cursor: pointer;
+  }
+
+  img {
+    width: 30px;
+    height: auto;
+  }
+
   p {
     font-family: "Cormorant Garamond", serif;
     font-size: 2rem;
+    margin-left: -90px;
   }
 
   div {
