@@ -2,6 +2,7 @@ import React from "react";
 import style from "../../styles/LandingPage/NavBar";
 import bookLogo from "/book.png";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -25,10 +26,16 @@ const NavBar = () => {
           <ScrollLink to="contact" smooth={true} duration={500}>
             Contact & Hours
           </ScrollLink>
-          <a href="#" className="search">
-            Search
-          </a>
-          <a href="#">Cart(0)</a>
+
+          <Link to="/signin">
+            <a href="#" className="search">
+              Sign In
+            </a>
+          </Link>
+
+          <Link to="/signup">
+            <a href="#">Sign Up</a>
+          </Link>
         </div>
       </style.Nav>
     </style.Wrapper>

@@ -8,7 +8,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 7rem;
+  padding: 0rem 6rem;
 
   .links {
     cursor: pointer;
@@ -22,7 +22,7 @@ const Nav = styled.nav`
   p {
     font-family: "Cormorant Garamond", serif;
     font-size: 2rem;
-    margin-left: -90px;
+    margin-left: -80px;
   }
 
   div {

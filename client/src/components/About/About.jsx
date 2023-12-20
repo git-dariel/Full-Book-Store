@@ -13,7 +13,7 @@ const About = () => {
           <p className="def">
             Vintage Books is a fictional project I made to improve my skills.
             Vintage Books is a local book-shop with the very best vintage
-            collection. As a bookshop with many collectible books they wantes to
+            collection. As a bookshop with many collectible books they wanted to
             feel and look true to their nature. <br></br> <br></br>When working
             on Vintage Books. I went with an antique vibe, a slight touch of
             modern and a vintage-aesthetic color combination.

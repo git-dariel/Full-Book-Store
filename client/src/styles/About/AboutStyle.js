@@ -2,18 +2,9 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,500&family=Raleway:wght@500&display=swap");
-  /* * {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #dfcfbf;
-  } */
 `;
 
 const About = styled.div`
-  /* display: flex;
-  align-items: center; */
-
   .title {
     font-size: 1.8rem;
     font-style: italic;
