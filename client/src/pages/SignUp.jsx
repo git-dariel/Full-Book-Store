@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { supabase } from "../Supabase/supabaseClient";
 import { Link } from "react-router-dom";
+import styles from "../styles/Auth/SignUp";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -32,44 +34,59 @@ const SignUp = () => {
           },
         },
       });
+
       if (error) throw error;
-      alert("Check your email for verification link.");
+      toast.success("Check your email for verification link.");
     } catch (error) {
-      alert(error);
+      toast.error(error.message);
     }
   }
 
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Full Name"
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+    <styles.Wrapper>
+      <div className="container">
+        <h1>Sign Up</h1>
+        <form onSubmit={handleSubmit}>
+          <styles.InputWrapper>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
+          </styles.InputWrapper>
+          <styles.ButtonWrap>
+            <button type="submit">Sign Up</button>{" "}
+            <Toaster position="top-center" reverseOrder={false} />
+          </styles.ButtonWrap>
 
-        <button type="submit">Sign Up</button>
+          <p className="Home">
+            Already have an account?{" "}
+            <Link className="home" to="/signin">
+              Sign In
+            </Link>
+          </p>
 
-        <div>
-          Already have an account?
-          <Link to="/signin">Sign In</Link>
-        </div>
-      </form>
-    </div>
+          <p className="Descript">
+            <Link className="descript" to="/">
+              Go Home
+            </Link>
+          </p>
+        </form>
+      </div>
+    </styles.Wrapper>
   );
 };
 

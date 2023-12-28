@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { supabase } from "../Supabase/supabaseClient";
 import { Link, useNavigate } from "react-router-dom";
+import styles from "../styles/Auth/SignIn";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignIn = ({ setToken }) => {
   const [formData, setFormData] = useState({
@@ -31,38 +33,51 @@ const SignIn = ({ setToken }) => {
       if (error) throw error;
       console.log(data);
       setToken(data);
-      alert("Your sign in was successful!");
       navigate("/main");
     } catch (error) {
-      alert(error);
+      toast.error(error.message);
     }
   }
 
   return (
-    <div>
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+    <styles.Wrapper>
+      <div className="container">
+        <h1>Sign In</h1>
+        <form onSubmit={handleSubmit}>
+          <styles.InputWrapper>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
+          </styles.InputWrapper>
+          <styles.ButtonWrap>
+            <button type="submit">Sign In</button>{" "}
+            <Toaster position="top-center" reverseOrder={false} />
+          </styles.ButtonWrap>
 
-        <button type="submit">Sign In</button>
+          <p className="Home">
+            Don't have an account?{" "}
+            <Link className="home" to="/signup">
+              Sign Up
+            </Link>
+          </p>
 
-        <div>
-          Don't have an account?
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      </form>
-    </div>
+          <p className="Descript">
+            <Link className="descript" to="/">
+              Go Home
+            </Link>
+          </p>
+        </form>
+      </div>
+    </styles.Wrapper>
   );
 };
 

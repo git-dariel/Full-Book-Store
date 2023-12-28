@@ -6,15 +6,22 @@ import MainHomePage from "./pages/MainHomePage";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [token, setToken] = useState(false);
+  const [token, setToken] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  if (token) {
-    sessionStorage.setItem("token", JSON.stringify(token));
-  }
-
+  // Set token in sessionStorage when it changes
   useEffect(() => {
-    if (sessionStorage.getItem("token")) {
-      setToken(JSON.parse(sessionStorage.getItem("token")));
+    if (token) {
+      sessionStorage.setItem("token", JSON.stringify(token));
+      setIsLoggedIn(true);
+    }
+  }, [token]);
+
+  // Get token from sessionStorage on initial render
+  useEffect(() => {
+    const storedToken = sessionStorage.getItem("token");
+    if (storedToken) {
+      setToken(JSON.parse(storedToken));
     }
   }, []);
 
@@ -26,7 +33,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn setToken={setToken} />} />
           {token ? (
-            <Route path="/main" element={<MainHomePage token={token} />} />
+            <Route path="/main" element={<MainHomePage token={token} isLoggedIn={isLoggedIn} />} />
           ) : (
             ""
           )}
