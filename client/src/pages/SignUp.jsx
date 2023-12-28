@@ -32,7 +32,7 @@ const SignUp = () => {
           data: {
             full_name: formData.fullName,
           },
-          emailRedirectTo: "http://localhost:5173/signin",
+          emailRedirectTo: "https://sinagtalata.vercel.app/signin",
         },
       });
 
