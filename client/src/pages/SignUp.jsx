@@ -32,8 +32,11 @@ const SignUp = () => {
           data: {
             full_name: formData.fullName,
           },
+          emailRedirectTo: "http://localhost:5173/signin",
         },
       });
+
+      console.log(data);
 
       if (error) throw error;
       toast.success("Check your email for verification link.");
