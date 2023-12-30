@@ -33,7 +33,10 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn setToken={setToken} />} />
           {token ? (
-            <Route path="/main" element={<MainHomePage token={token} isLoggedIn={isLoggedIn} />} />
+            <Route
+              path="/main"
+              element={<MainHomePage isLoggedIn={isLoggedIn} />}
+            />
           ) : (
             ""
           )}

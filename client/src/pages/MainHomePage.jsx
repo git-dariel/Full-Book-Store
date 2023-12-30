@@ -1,32 +1,27 @@
-import React, {useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Contents from "../components/store-components/Contents";
+import NavBar from "../components/store-components/NavBar";
 
-const MainHomePage = ({ token, isLoggedIn}) => {
-  const navigate = useNavigate();
+const MainHomePage = ({ isLoggedIn }) => {
+  // const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (isLoggedIn && !localStorage.getItem("toastShown")) {
       toast.success("Logged in successfully!");
+      localStorage.setItem("toastShown", true);
     }
   }, [isLoggedIn]);
 
-  function handleLogout() {
-    const confirm = window.confirm("Are you sure you want to log out?");
-
-    if (!confirm) {
-      return;
-    } else {
-      sessionStorage.removeItem("token");
-      navigate("/");
-    }
-  }
-
   return (
     <div>
-      <h1>Welcome to SinagTalata, {token.user.user_metadata.full_name}</h1>
-      <button onClick={handleLogout}>Sign Out</button>
-      <Toaster position="top-right" reverseOrder={false}/>
+      <NavBar />
+      {/* <h1>Welcome to SinagTalata, {token.user.user_metadata.full_name}</h1> */}
+      <Contents />
+      <Toaster position="top-right" reverseOrder={false} />
+      <ToastContainer />
     </div>
   );
 };
