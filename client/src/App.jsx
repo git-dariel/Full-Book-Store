@@ -5,6 +5,7 @@ import SignIn from "./pages/SignIn";
 import MainHomePage from "./pages/MainHomePage";
 import Cart from "./pages/Cart";
 import { useState, useEffect } from "react";
+import SuccessPage from "./pages/SuccessPage";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -42,6 +43,7 @@ function App() {
             ""
           )}
           <Route path="/cart" element={<Cart />} />
+          <Route path="/success" element={<SuccessPage />} />
         </Routes>
       </BrowserRouter>
     </>

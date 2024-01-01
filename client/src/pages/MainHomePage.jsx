@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Contents from "../components/store-components/Contents";
 import NavBar from "../components/store-components/NavBar";
+import ScrollBarStyle from "../styles/Scrollbar/ScrollBarStyle";
 
 const MainHomePage = ({ isLoggedIn }) => {
   // const navigate = useNavigate();
@@ -21,6 +22,7 @@ const MainHomePage = ({ isLoggedIn }) => {
       {/* <h1>Welcome to SinagTalata, {token.user.user_metadata.full_name}</h1> */}
       <Contents />
       <Toaster position="top-right" reverseOrder={false} />
+      <ScrollBarStyle />
       <ToastContainer />
     </div>
   );

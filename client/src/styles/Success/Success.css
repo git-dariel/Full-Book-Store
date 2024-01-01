@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,500&family=Raleway:wght@500&display=swap");
+
+.success-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8fae5;
+}
+
+.success-message {
+  font-size: 2em;
+  color: #4caf50;
+  text-align: center;
+  animation: popIn 2s ease-in-out;
+  margin-bottom: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.goBack {
+  position: relative;
+  overflow: hidden;
+  background-color: #4caf50; /* Same as success-message text color */
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: center;
+  animation: popIn 2s ease-in-out;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+.goBack:hover {
+  background-color: #45a049; /* Darker green when hovered */
+  transform: scale(1.1); /* Slightly increase size when hovered */
+}
+
+.goBack:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

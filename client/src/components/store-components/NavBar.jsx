@@ -2,9 +2,8 @@ import React from "react";
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import style from "../../styles/MainHomePage/NavBar";
-import appleLogo from "/book.png";
+import bookLogo from "/book.png";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ const NavBar = () => {
     <style.Container>
       <style.Wrapper>
         <style.Left>
-          <style.Logo src={appleLogo} alt="apple logo" />
+          <style.Logo src={bookLogo} alt="apple logo" />
           <h1>SinagTalata</h1>
         </style.Left>
         <style.Right>

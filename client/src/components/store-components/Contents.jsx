@@ -27,7 +27,7 @@ const Contents = () => {
                 <h3>{product.name}</h3>
                 <img src={product.image} alt={product.name} />
 
-                <p className="price">${product.price}</p>
+                <p className="price">₱{product.price}</p>
 
                 <button onClick={() => handleAddToCart(product)}>
                   Add to Cart

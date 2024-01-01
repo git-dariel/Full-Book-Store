@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -12,10 +12,13 @@ import { Link } from "react-router-dom";
 import "../styles/Cart/cart.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "../pages/Modal";
+import ScrollBarStyle from "../styles/Scrollbar/ScrollBarStyle";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     dispatch(getTotals());
@@ -33,6 +36,7 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -79,7 +83,7 @@ const Cart = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="cart-product-price">${cartItem.price}</div>
+                  <div className="cart-product-price">₱{cartItem.price}</div>
                   <div className="cart-product-quantity">
                     <button
                       className="decrease"
@@ -111,7 +115,8 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <button onClick={() => setOpenModal(true)}>Check out</button>
+              <Modal open={openModal} onClose={() => setOpenModal(false)} />
               <div className="continue-shopping">
                 <Link to="/main">
                   <svg
@@ -134,6 +139,7 @@ const Cart = () => {
           </div>
         </div>
       )}
+      <ScrollBarStyle />
       <ToastContainer />
     </div>
   );

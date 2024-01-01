@@ -1,0 +1,248 @@
+/* Modal Container */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,500&family=Raleway:wght@500&display=swap");
+
+.appleLogo {
+  width: 30px;
+  height: 30px;
+}
+.check {
+  margin-right: 830px;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.parent-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b19470;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease;
+  width: 80%;
+  max-width: 1000px;
+  border-radius: 10px;
+  color: white;
+  overflow: auto;
+  max-height: 90vh;
+  font-family: "Raleway", sans-serif;
+}
+
+.parent-container.closing {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+}
+
+/* Additional Styling for Modal Contents */
+.shipping-fee,
+.title-address,
+.title-ordered,
+.orderTotal p,
+.payment-method p,
+.totals p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+}
+.productImg {
+  width: 50px;
+  height: auto;
+}
+.title-address .title-ordered {
+  font-size: 1rem;
+  margin-left: 10px;
+  font-family: "Raleway", sans-serif;
+}
+
+.shipping-fee,
+.child-address,
+.child-ordered,
+.orderTotal,
+.payment-method,
+.totals {
+  margin-bottom: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.child-address {
+  background-color: #76453b;
+  width: auto;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.userName,
+.contact,
+.person-address {
+  font-size: 16px;
+  color: #f8f9fa;
+  font-family: "Raleway", sans-serif;
+}
+
+.change {
+  color: #92c7cf;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+}
+
+.child-address h1 {
+  margin-right: 2rem;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+}
+
+.place-order {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+}
+
+.place-order:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+}
+
+table th,
+table td {
+  padding: 10px 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.shipping-container {
+  background-color: #76453b;
+  padding: 0px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  width: 30px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.fee {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+.shipping-fee {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-family: "Raleway", sans-serif;
+}
+
+.shipping-fee h4 {
+  font-family: "Raleway", sans-serif;
+}
+
+.total-container,
+.mer,
+.ship,
+.total {
+  background-color: #76453b;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+}
+
+select {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: #76453b;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+}
+
+option {
+  font-family: "Raleway", sans-serif;
+}
+
+.total-container,
+.mer,
+.ship,
+.total {
+  background-color: #76453b;
+}
+a {
+  color: #aad7d9;
+}
+.close-button {
+  position: absolute;
+  margin-top: -10px;
+  right: 10px;
+  color: white;
+  border: none;
+  padding: 0px 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}

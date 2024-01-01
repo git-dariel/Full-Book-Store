@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Section from "../components/Landing Page/Section";
 import style from "../styles/LandingPage/HomePageStyle";
 import About from "../components/About/About";
