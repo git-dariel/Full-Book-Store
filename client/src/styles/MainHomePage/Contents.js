@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HomeContainer = styled.div`
-  padding: 2rem 4rem;
+  padding: 0rem 4rem;
 
   h2 {
     font-size: 40px;
@@ -25,7 +25,7 @@ const Product = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   padding: 1rem;
   border-radius: 15px;
   width: 250px;
@@ -35,14 +35,13 @@ const Product = styled.div`
     2px 2px 5px rgba(94, 104, 121, 0.3);
 
   h3 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     text-align: center;
   }
 
   img {
     width: 50%;
-    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -57,18 +56,18 @@ const Product = styled.div`
     width: 100%;
     height: 40px;
     border-radius: 5px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-weight: 400;
     letter-spacing: 1.15px;
-    background-color: #001524;
-    color: #f9f9f9;
+    background-color: #739072;
+    color: black;
     border: none;
     outline: none;
     cursor: pointer;
 
     &:hover {
-      background-color: #b4b4b3;
-      color: black;
+      background-color: #4f6f52;
+      color: white;
       transition: 0.3s ease-in;
     }
   }

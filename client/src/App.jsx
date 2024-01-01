@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import MainHomePage from "./pages/MainHomePage";
+import Cart from "./pages/Cart";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           ) : (
             ""
           )}
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </>
