@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
+import About from "../components/About/About";
 import Section from "../components/Landing Page/Section";
 import style from "../styles/LandingPage/HomePageStyle";
-import About from "../components/About/About";
 import ScrollBarStyle from "../styles/Scrollbar/ScrollBarStyle";
 
 const HomePage = () => {

@@ -2,7 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const productsApi = createApi({
   reducerPath: "productsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://sinagtalata-server-data.vercel.app",
+  }),
   endpoints: (builder) => ({
     getAllProducts: builder.query({
       query: () => "products",
